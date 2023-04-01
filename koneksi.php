@@ -29,12 +29,7 @@
 
         return mysqli_query($this->koneksi,$update);
     }
-    public function Delete($query,$id)
-    {
-        $delete = "DELETE $query WHERE `id` = $id ";
 
-        return mysqli_query($this->koneksi,$query);
-    }
 
 }
     $db = new koneksi;
