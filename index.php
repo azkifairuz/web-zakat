@@ -1,8 +1,6 @@
 <?php
 include("koneksi.php");
-$con = $db->koneksi;
 $queryHarga = "SELECT * FROM `harga_beras` ";
-$getData =mysqli_query($con,$queryHarga);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +21,9 @@ $getData =mysqli_query($con,$queryHarga);
         <label for="hb"> harga beras</label><br>
         <select name="hb"> 
             <?php 
-             while ($data = mysqli_fetch_assoc($getData)) {
+             foreach ($db->tampil_Data_Banyak($queryHarga) as $value) {
                 ?>
-                <option value="<?php echo $data['id'] ?>">Rp.<?php echo number_format($data['harga_beras']);?></option>
+                <option value="<?php echo $value['id'] ?>">Rp.<?php echo number_format($value['harga_beras']);?></option>
                 <?php
              }
             ?>
@@ -43,7 +41,6 @@ $getData =mysqli_query($con,$queryHarga);
         $hb = htmlspecialchars($_POST["hb"]);
         $getDataHb = mysqli_query($con,"SELECT * FROM `harga_beras`WHERE `id` = $hb ");
         $harga_beras = mysqli_fetch_assoc($getDataHb);
-        var_dump($harga_beras);
         $tb = intval($harga_beras['harga_beras']) * intval($tanggungan) * 4.3;
         $na = htmlspecialchars($_POST["na"]);
 
@@ -66,7 +63,7 @@ $getData =mysqli_query($con,$queryHarga);
             
             $query = "SELECT *, harga_beras.harga_beras FROM pembayar_zakat INNER JOIN harga_beras ON pembayar_zakat.id_beras=harga_beras.id;";
             $no = 1;
-            foreach ($db->tampil_Data($query) as  $value) {
+            foreach ($db->tampil_Data_Banyak($query) as  $value) {
                 ?>
                    <tr>
                    <td>
