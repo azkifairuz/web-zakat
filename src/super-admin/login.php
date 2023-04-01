@@ -49,7 +49,7 @@ session_start();
                  }
                }else{
                 ?>
-                    <p>belum terdaftar silahkan hubungi pihak admin 085155119213</p>
+                    <p>tida terdaftar sebagai admin</p>
                 <?php
                }
             }

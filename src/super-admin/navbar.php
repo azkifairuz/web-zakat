@@ -15,7 +15,7 @@
             <a href="data-amil.php" class="cursor-pointer hover:bg-blue-400 hover:text-black h-full p-2">Data Amil</a>
             <a href="data-pembayar.php" class="cursor-pointer hover:bg-blue-400 hover:text-black h-full p-2">Data Pembayar Zakat</a>
         </ul>
-        <button class="cursor-pointer bg-blue-500 hover:bg-black py-2 px-4 rounded-lg">Logout</button>
+        <a href="logout.php"><button class="cursor-pointer bg-blue-500 hover:bg-black py-2 px-4 rounded-lg">Logout</button></a>
     </nav>
 </body>
 </html>

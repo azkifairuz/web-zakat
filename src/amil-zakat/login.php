@@ -15,6 +15,7 @@
 <body>
     <div class="w-[300px] border border-black rounded-2xl p-6 mx-auto my-[100px]">
         <h1 class="text-2xl mb-5">Login Amil</h1>
+        <p class="text-md mb-5">jika lupa password hubungi admin</p>
         <form method="post" class="flex flex-col gap-5">
             
             <label for="nama">Nama</label>
@@ -32,7 +33,7 @@
             $cek = $db->cek_data($query);
             if ($username == "" && $pw == '') {
                 ?>
-                 <p>Pssword atau username tidak boleh kosong</p>
+                 <p class="text-xl">Pssword atau username tidak boleh kosong</p>
                 <?php
             }else {
                if ($cek > 0) {
