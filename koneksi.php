@@ -17,11 +17,17 @@
             mysqli_connect_errno();
         }
     }
-    function tampil_Data($query){
+    function tampil_Data_Banyak($query){
         $data = mysqli_query($this->koneksi,$query);
         while ($row = mysqli_fetch_assoc($data)) 
             $hasil[] =$row;
             return $hasil;
+        
+    }
+    function tampil_Data_Satu($query){
+        $get = mysqli_query($this->koneksi,$query);
+        $data = mysqli_fetch_assoc($get);
+        return $data;
         
     }
     function cek_data($query){
