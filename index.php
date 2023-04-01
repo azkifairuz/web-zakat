@@ -39,8 +39,7 @@ $queryHarga = "SELECT * FROM `harga_beras` ";
         $nama = htmlspecialchars($_POST["nama"]);
         $tanggungan = htmlspecialchars($_POST["tanggungan"]);
         $hb = htmlspecialchars($_POST["hb"]);
-        $getDataHb = mysqli_query($con,"SELECT * FROM `harga_beras`WHERE `id` = $hb ");
-        $harga_beras = mysqli_fetch_assoc($getDataHb);
+        $harga_beras = $db->tampil_Data_Satu("SELECT * FROM `harga_beras`WHERE `id` = $hb ");
         $tb = intval($harga_beras['harga_beras']) * intval($tanggungan) * 4.3;
         $na = htmlspecialchars($_POST["na"]);
 
