@@ -17,6 +17,25 @@
             mysqli_connect_errno();
         }
     }
+    public function Insert($query)
+    {
+        $insert = "INSERT INTO $query";
+
+        return mysqli_query($this->koneksi,$insert);
+    }
+    public function Update($query,$id)
+    {
+        $update = "UPDATE $query WHERE `id` = $id";
+
+        return mysqli_query($this->koneksi,$update);
+    }
+    public function Delete($query,$id)
+    {
+        $delete = "DELETE $query WHERE `id` = $id ";
+
+        return mysqli_query($this->koneksi,$query);
+    }
+
 }
     $db = new koneksi;
 
