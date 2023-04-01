@@ -1,6 +1,8 @@
 <?php
 include("koneksi.php");
-
+$con = $db->koneksi;
+$queryHarga = "SELECT * FROM `harga_beras` ";
+$getData =mysqli_query($con,$queryHarga);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +21,16 @@ include("koneksi.php");
         <label for="tanggungan"> jumlah tanggungan</label><br>
         <input type="number" name="tanggungan"> </input><br>
         <label for="hb"> harga beras</label><br>
-        <input name="hb"> </input><br>
-        <label for="tb"> total bayar</label><br>
-        <input type="text" name="tb"> </input><br>
+        <select name="hb"> 
+            <?php 
+             while ($data = mysqli_fetch_assoc($getData)) {
+                ?>
+                <option value="<?php echo $data['id'] ?>"><?php echo $data['harga_beras'];?></option>
+                <?php
+             }
+            ?>
+        </select><br>
+        </input><br>
         <label for="na"> nama amil</label><br>
         <input type="text" name="na"> </input><br>
 
@@ -32,7 +41,10 @@ include("koneksi.php");
         $nama = htmlspecialchars($_POST["nama"]);
         $tanggungan = htmlspecialchars($_POST["tanggungan"]);
         $hb = htmlspecialchars($_POST["hb"]);
-        $tb = htmlspecialchars($_POST["tb"]);
+        $getData = mysqli_query($con,"SELECT * FROM `harga_beras`WHERE `id` = $hb ");
+        $harga_beras = mysqli_fetch_assoc($getData);
+        var_dump($harga_beras);
+        $tb = intval($harga_beras['harga_beras']) * intval($tanggungan) * 4.3;
         $na = htmlspecialchars($_POST["na"]);
 
         $queryInsert = "`pembayar_zakat`(`nama`, `tanggungan`, `id_beras`, `total_bayar`,`nama_amil`) VALUES ('$nama','$tanggungan','$hb','$tb','$na')";
@@ -50,7 +62,6 @@ include("koneksi.php");
             <th>nama amil</th>
             <th>
         </thead>
-        <tbody>
             <?php
             
             $query = "SELECT *, harga_beras.harga_beras FROM pembayar_zakat INNER JOIN harga_beras ON pembayar_zakat.id_beras=harga_beras.id;";
@@ -71,7 +82,7 @@ include("koneksi.php");
                         <?php echo $value['harga_beras'] ?>
                     </td>
                     <td>
-                        <?php echo $value['total_bayar'] ?>
+                       Rp. <?php echo number_format($value['total_bayar']) ?>
                     </td>
                     <td>
                         <?php echo $value['nama_amil'] ?>
@@ -83,7 +94,7 @@ include("koneksi.php");
                 $no++;
             }
             ?>
-        </tbody>
+        
 
     </table>
 </body>
