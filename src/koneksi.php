@@ -47,11 +47,11 @@
 
         return mysqli_query($this->koneksi,$update);
     }
-    public function Delete($query,$id)
+    public function Delete($tableName,$id)
     {
-        $delete = "DELETE $query WHERE `id` = $id ";
+        $delete = "DELETE FROM $tableName WHERE `id` = $id";
 
-        return mysqli_query($this->koneksi,$query);
+        return mysqli_query($this->koneksi,$delete);
     }
 
 }
