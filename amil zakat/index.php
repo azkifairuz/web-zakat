@@ -1,6 +1,7 @@
 <?php
 include("../koneksi.php");
 include("session.php");
+$amil = $_SESSION['username'];
 $queryHarga = "SELECT * FROM `harga_beras` ";
 ?>
 <!DOCTYPE html>
@@ -31,7 +32,7 @@ $queryHarga = "SELECT * FROM `harga_beras` ";
         </select><br>
         </input><br>
         <label for="na"> nama amil</label><br>
-        <input type="text" name="na"> </input><br>
+        <input type="text" readonly name="na" value="<?php echo $amil ?>"> </input><br>
 
         <button type="submit" name="Tambah"> tambah</button><br>
     </form>
@@ -66,25 +67,25 @@ $queryHarga = "SELECT * FROM `harga_beras` ";
             foreach ($db->tampil_Data_Banyak($query) as  $value) {
                 ?>
                    <tr>
-                   <td>
-                        <?php echo $no?>
-                    </td>
-                    <td>
-                        <?php echo $value['nama'] ?>
-                    </td>
-                    <td>
-                        <?php echo $value['tanggungan'] ?>
-                    </td>
-                    <td>
-                        <?php echo $value['harga_beras'] ?>
-                    </td>
-                    <td>
-                       Rp. <?php echo number_format($value['total_bayar']) ?>
-                    </td>
-                    <td>
-                        <?php echo $value['nama_amil'] ?>
-                    </td>
-                    </tr
+                        <td>
+                            <?php echo $no?>
+                        </td>
+                        <td>
+                            <?php echo $value['nama'] ?>
+                        </td>
+                        <td>
+                            <?php echo $value['tanggungan'] ?>
+                        </td>
+                        <td>
+                            <?php echo $value['harga_beras'] ?>
+                        </td>
+                        <td>
+                        Rp. <?php echo number_format($value['total_bayar']) ?>
+                        </td>
+                        <td>
+                            <?php echo $value['nama_amil'] ?>
+                        </td>
+                    </tr>
               
                 
                 <?php
