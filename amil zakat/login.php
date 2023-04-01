@@ -24,8 +24,7 @@ include("../koneksi.php")
             $username = htmlspecialchars($_POST['nama']);
             $pw = htmlspecialchars($_POST['pw']);
             $query = "SELECT * FROM `amil_zakat` where `nama_amil` = '$username' ";
-            $user = "";
-            $userpw = "";
+            
             $cek = $db->cek_data($query);
             if ($username == "" && $pw == '') {
                 ?>
@@ -33,11 +32,9 @@ include("../koneksi.php")
                 <?php
             }else {
                if ($cek > 0) {
-                $getData = $db->tampil_Data($query);
-                foreach ($getData as  $value) {
-                     $user=$value['nama_amil'];
-                     $userpw = $value['password'];
-                 }
+                $getData = $db->tampil_Data_Satu($query);
+                $userpw = $getData['password'];
+                $user = $getData['nama_amil'];
                  if ($userpw == $pw) {
                     $_SESSION['username'] = $user;
                     $_SESSION['login'] = true;
