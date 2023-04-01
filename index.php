@@ -11,17 +11,29 @@ include ("koneksi.php");
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form method="post">
         <label for="nama"> nama pembayar</label><br>
-        <input id="nama"> </input><br>
+        <input name="nama"> </input><br>
         <label for="tanggungan"> jumlah tanggungan</label><br>
-        <input type="number" id="tanggungan"> </input><br>
+        <input type="number" name="tanggungan"> </input><br>
         <label for="hb"> harga</label><br>
-        <input id="hb"> </input><br>
+        <input name="hb"> </input><br>
         <label for="tb"> total bayar</label><br>
-        <input type="text" id="tb"> </input><br>
+        <input type="text" name="tb"> </input><br>
 
-        <button type="submit" id="Tambah"> tambah</button><br>
+        <button type="submit" name="Tambah"> tambah</button><br>
     </form>
+    <?php
+if (isset($_POST["Tambah"])){
+    $nama=htmlspecialchars($_POST["nama"]);
+    $tanggungan=htmlspecialchars($_POST["tanggungan"]);
+    $hb=htmlspecialchars($_POST["hb"]);
+    $tb=htmlspecialchars($_POST["tb"]);
+    
+    $queryInsert="`pembayar_zakat`(`nama`, `tanggungan`, `harga_beras`, `total_bayar`) VALUES ('$nama','$tanggungan','$hb','$tb')";
+    $db->Insert($queryInsert);
+    echo "berhasil";
+}
+    ?>
 </body>
 </html>
