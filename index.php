@@ -25,7 +25,7 @@ $getData =mysqli_query($con,$queryHarga);
             <?php 
              while ($data = mysqli_fetch_assoc($getData)) {
                 ?>
-                <option value="<?php echo $data['id'] ?>"><?php echo $data['harga_beras'];?></option>
+                <option value="<?php echo $data['id'] ?>">Rp.<?php echo number_format($data['harga_beras']);?></option>
                 <?php
              }
             ?>
