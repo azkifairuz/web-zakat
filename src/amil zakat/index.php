@@ -1,6 +1,7 @@
 <?php
 include("../koneksi.php");
 include("session.php");
+include("navbar.php");
 $amil = $_SESSION['username'];
 $queryHarga = "SELECT * FROM `harga_beras` ";
 ?>
