@@ -1,5 +1,6 @@
 <?php
 include("../koneksi.php");
+include("session.php");
 $queryHarga = "SELECT * FROM `harga_beras` ";
 ?>
 <!DOCTYPE html>
