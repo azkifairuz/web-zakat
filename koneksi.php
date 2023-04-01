@@ -19,10 +19,10 @@
     }
     function tampil_Data($query){
         $data = mysqli_query($this->koneksi,$query);
-        while ($row = mysqli_fetch_assoc($data)) {
+        while ($row = mysqli_fetch_assoc($data)) 
             $hasil[] =$row;
             return $hasil;
-        }
+        
     }
     public function Insert($query)
     {
