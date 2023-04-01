@@ -614,6 +614,10 @@ video {
   width: 30%;
 }
 
+.w-\[30\] {
+  width: 30;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -782,6 +786,11 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .text-center {

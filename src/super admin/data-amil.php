@@ -2,7 +2,7 @@
     include("../koneksi.php");
     include("session.php");
     include("navbar.php")
-    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@
             <thead class="border border-black">
                 <th class="border border-black">No</th>
                 <th class="border border-black">nama amil</th>
-                <th class="border border-black">Action</th>
+                <th class="border border-black w-[30%]">Action</th>
             </thead>
             <?php
                 $query = "SELECT * FROM `amil_zakat`";
@@ -30,12 +30,12 @@
                 foreach ($get as $value) {
             ?>
                 <tr>
-                    <td class="border border-black"><?php echo $no ?></td>
-                    <td class="border border-black w-[50%]"><?php echo $value['nama_amil']?></td>
-                    <td class="border border-black p-2 text-center flex gap-2 w-[30%] justify-center">
-                        <a href="edit-categories.php?p=<?php echo $data['id']; ?>" class=" cursor-pointer text-center rounded-sm  bg-blue-400 text-white py-2 px-4">Edit</a>
+                    <td class="border border-black p-2 "><?php echo $no ?></td>
+                    <td class="border border-black p-2 w-[50%]"><?php echo $value['nama_amil']?></td>
+                    <td class="border border-black p-2  text-center flex gap-2 justify-center">
+                        <a href="edit-amil.php?p=<?php echo $value['id']; ?>" class=" cursor-pointer text-center rounded-sm  bg-blue-400 text-white py-2 px-4">Edit</a>
                         <span class="text-2xl block">|</span>
-                        <a href="edit-categories.php?p=<?php echo $data['id']; ?>" class=" cursor-pointer text-center rounded-sm  bg-red-400 text-white py-2 px-4">Hapus</a>
+                        <a href="hapus-amil.php?p=<?php echo $value['id']; ?>" class=" cursor-pointer text-center rounded-sm  bg-red-400 text-white py-2 px-4">Hapus</a>
                     </td>
                 </tr>
             <?php
