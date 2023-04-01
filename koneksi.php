@@ -24,6 +24,11 @@
             return $hasil;
         
     }
+    function cek_data($query){
+        $data = mysqli_query($this->koneksi,$query);
+        $result = mysqli_num_rows($data);
+        return $result;
+    }
     public function Insert($query)
     {
         $insert = "INSERT INTO $query";
