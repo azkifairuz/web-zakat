@@ -66,25 +66,25 @@ $queryHarga = "SELECT * FROM `harga_beras` ";
             foreach ($db->tampil_Data_Banyak($query) as  $value) {
                 ?>
                    <tr>
-                   <td>
-                        <?php echo $no?>
-                    </td>
-                    <td>
-                        <?php echo $value['nama'] ?>
-                    </td>
-                    <td>
-                        <?php echo $value['tanggungan'] ?>
-                    </td>
-                    <td>
-                        <?php echo $value['harga_beras'] ?>
-                    </td>
-                    <td>
-                       Rp. <?php echo number_format($value['total_bayar']) ?>
-                    </td>
-                    <td>
-                        <?php echo $value['nama_amil'] ?>
-                    </td>
-                    </tr
+                        <td>
+                            <?php echo $no?>
+                        </td>
+                        <td>
+                            <?php echo $value['nama'] ?>
+                        </td>
+                        <td>
+                            <?php echo $value['tanggungan'] ?>
+                        </td>
+                        <td>
+                            <?php echo $value['harga_beras'] ?>
+                        </td>
+                        <td>
+                        Rp. <?php echo number_format($value['total_bayar']) ?>
+                        </td>
+                        <td>
+                            <?php echo $value['nama_amil'] ?>
+                        </td>
+                    </tr>
               
                 
                 <?php
