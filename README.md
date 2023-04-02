@@ -12,6 +12,9 @@ contibutor:
 Project dibuat menggunakan teknologi:
   php (sebagai bahasa pemrograman)
   tailwindcss(sebagai styling)
+  
+  <br>
+instalasi project jika tailwind nya tidak ter detect otomatis(optional)
 step 1: install tailwild (npm install -D tailwindcss)
 step 2: instalisasi tailwind (npx tailwindcssn inti)
 step 3: npx tailwindcss -i ./src/input.css-o ./dist/output.css--watch
