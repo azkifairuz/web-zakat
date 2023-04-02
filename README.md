@@ -1,20 +1,20 @@
 # web-zakat
 
 website web zakat
-contibutor:
-  Azkia Ajmal Fairuz (12110006)
-  Esti Mara Qanita (12110009)
-  Jahrotun Nissa (12110016)
-  Leni Purbaningsih (12110017)
-  M.Dimas Prasetyo (12110022)
+contibutor:<br>
+  Azkia Ajmal Fairuz (12110006)<br>
+  Esti Mara Qanita (12110009)<br>
+  Jahrotun Nissa (12110016)<br>
+  Leni Purbaningsih (12110017)<br>
+  M.Dimas Prasetyo (12110022)<br>
   
 
-Project dibuat menggunakan teknologi:
-  php (sebagai bahasa pemrograman)
+Project dibuat menggunakan teknologi:<br>
+  php (sebagai bahasa pemrograman)<br>
   tailwindcss(sebagai styling)
   
   <br>
-instalasi project jika tailwind nya tidak ter detect otomatis(optional)
-step 1: install tailwild (npm install -D tailwindcss)
-step 2: instalisasi tailwind (npx tailwindcssn inti)
+instalasi project jika tailwind nya tidak ter detect otomatis(optional)<br>
+step 1: install tailwild (npm install -D tailwindcss)<br>
+step 2: instalisasi tailwind (npx tailwindcssn inti)<br>
 step 3: npx tailwindcss -i ./src/input.css-o ./dist/output.css--watch
