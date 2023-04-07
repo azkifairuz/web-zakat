@@ -38,7 +38,7 @@ CREATE TABLE `amil_zakat` (
 --
 
 INSERT INTO `amil_zakat` (`id`, `nama_amil`, `password`) VALUES
-(1, 'aceng', '12345678'),
+(1, 'aceng', '123'),
 (12, 'aji', '12');
 
 -- --------------------------------------------------------
@@ -109,7 +109,7 @@ CREATE TABLE `super_admin` (
 --
 
 INSERT INTO `super_admin` (`id`, `username`, `password`) VALUES
-(1, 'radit', '12');
+(1, 'admin', '123');
 
 --
 -- Indexes for dumped tables
