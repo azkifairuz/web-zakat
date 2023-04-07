@@ -17,4 +17,14 @@ Project dibuat menggunakan teknologi:<br>
 instalasi project jika tailwind nya tidak ter detect otomatis(optional)<br>
 step 1: install tailwild (npm install -D tailwindcss)<br>
 step 2: instalisasi tailwind (npx tailwindcssn inti)<br>
-step 3: npx tailwindcss -i ./src/input.css-o ./dist/output.css--watch
+step 3: npx tailwindcss -i ./src/input.css-o ./dist/output.css--watch<br>
+<br>
+
+akun default<br>
+admin:<br>
+username:radit pass:123<br>
+<br>
+amil:<br>
+username:aceng,<br>
+pass:123<br>
+
